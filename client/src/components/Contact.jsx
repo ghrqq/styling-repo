@@ -12,7 +12,7 @@ export default function Contact() {
         padding: 0,
       }}
     >
-      <p>"This is Contact component!"</p>
+      <p>"This is Contact component!!!"</p>
     </div>
   );
 }
