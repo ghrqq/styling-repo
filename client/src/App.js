@@ -6,6 +6,8 @@ import Contact from "./components/Contact";
 import Services from "./components/Services";
 import Follow from "./components/Follow";
 import MainSlider from "./components/MainSlider";
+import Footer from "./components/Footer";
+
 import useWindowDimensions from "./tools/useWindowDimensions";
 import img1 from "./img/img1.jpg";
 import img2 from "./img/img2.jpg";
@@ -57,6 +59,7 @@ function App() {
       >
         {page === "Follow" ? <Follow /> : null}
       </div>
+
       <MainSlider imgArr={imgArr} logo={logo} />
 
       <p>
@@ -74,6 +77,8 @@ function App() {
         auctor condimentum. Fusce maximus elementum malesuada. Maecenas egestas
         auctor congue. Curabitur consectetur dapibus euismod.
       </p>
+
+      <Footer />
     </div>
   );
 }

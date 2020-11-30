@@ -7,7 +7,7 @@ export default function About() {
     <div
       style={{
         backgroundColor: "#453D35",
-        height: height,
+        height: height / 2,
         margin: 0,
       }}
     >

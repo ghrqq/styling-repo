@@ -157,7 +157,21 @@ video {
   z-index: -1;
 
   width: 100%;
-  position: absolute;
+
+  position: fixed;
   top: 0;
+  left: 0;
+}
+
+#footer {
+  width: 100%;
+  margin: 0;
+  height: 10em;
+  margin-bottom: -1px;
+  margin-top: 5em;
+  background-color: black;
+  opacity: 0.5;
+  position: relative;
+  bottom: 0;
   left: 0;
 }
