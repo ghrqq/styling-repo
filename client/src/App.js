@@ -70,7 +70,7 @@ function App() {
         vel nisl eget sapien laoreet rutrum ut a sem. Vestibulum sed sapien vel
         nibh sollicitudin facilisis sed eleifend mauris. Nam fringilla lobortis
         nulla, eu aliquet erat rhoncus et. Aenean pulvinar massa at maximus
-        ultricies. Integer auctor nisi vel sapien viverra congue. Quisque eget
+        ultricies. Integer auctor nisi vel sapien vverra congue. Quisque eget
         ligula fringilla, consequat purus iaculis, tincidunt ligula. Integer
         pharetra in nibh nec placerat. Aliquam lacinia tempor odio nec rutrum.
         Maecenas posuere neque non auctor iaculis. Cras accumsan justo lacinia

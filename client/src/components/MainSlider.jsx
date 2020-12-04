@@ -4,12 +4,10 @@ import arrow from "../img/arrow-right.png";
 import bgvideo from "../img/particlebg.mp4";
 import useWindowDimensions from "../tools/useWindowDimensions";
 
-import logo from "../img/logo.jpg";
-
 export default function MainSlider(props) {
   const logo = props.logo;
   const imgArr = props.imgArr;
-  const { height, width } = useWindowDimensions();
+
   const [slider, setslider] = useState(0);
   const [isLogoOn, setisLogoOn] = useState(false);
 

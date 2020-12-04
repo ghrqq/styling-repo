@@ -59,8 +59,8 @@ nav {
   width: 100%;
   margin: 0;
   color: white;
-
-  background-color: #ffc233;
+  text-shadow: 1px 1px #b2b7a4;
+  background-color: #2f2222;
 }
 
 nav ul {
@@ -79,16 +79,18 @@ nav li {
   box-shadow: teal 1em;
   font-family: "Roboto Mono", monospace;
   letter-spacing: 0.2em;
+  transition: 0.8s;
 }
 
 nav li:hover {
   transition: 300ms;
   opacity: 1;
+  text-shadow: 1px 1px white;
 }
 
 .component {
   margin: 0;
-
+  transition: 0.8s;
   padding-top: 0;
   width: auto;
 }
@@ -115,6 +117,7 @@ nav li:hover {
   border-radius: 50%;
   height: 300px;
   display: inline-block;
+  transition: 0.8s;
 }
 
 #mainSlider img:hover {
@@ -174,4 +177,160 @@ video {
   position: relative;
   bottom: 0;
   left: 0;
+}
+
+.input {
+  margin: 10px 10px;
+  padding: 10px 10px;
+  width: 80%;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.input:focus {
+  border: none !important;
+}
+
+.input-textarea {
+  margin: 10px 10px;
+  padding: 20px 10px;
+  width: 80%;
+  height: 5em;
+  border-radius: 25px;
+}
+.input-textarea:focus {
+  border: none;
+}
+
+.input-button {
+  width: 50%;
+  /* height: 25px; */
+  font-size: 1.5em;
+  padding: 1em;
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.input-button:hover {
+  box-shadow: inset 0 0 10px;
+}
+.input-button:focus {
+  border: none;
+}
+
+form {
+  padding-top: 5em;
+
+  display: flexbox;
+}
+
+.iconset {
+  text-align: left;
+  padding-top: 0.4em;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  align-content: left;
+}
+
+.icon-social {
+  display: block;
+  margin: 0 0.1em;
+  justify-self: center;
+}
+
+.iconset a {
+  color: white;
+}
+
+.iconset a:hover {
+  color: gray;
+  transition: ease-in-out;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 2em;
+}
+
+.FAQ {
+  padding-top: 5em;
+  display: flexbox;
+  width: 40%;
+}
+
+#image1 {
+  background-image: url("./img/beard1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  filter: grayscale(100%);
+  display: flexbox;
+  transition: 0.8s;
+}
+
+#image1:hover {
+  background-image: url("./img/beard2.jpg");
+  filter: none;
+  height: 250px;
+}
+#image2 {
+  background-image: url("./img/color.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  filter: grayscale(100%);
+  display: flexbox;
+  transition: 0.8s;
+}
+
+#image2:hover {
+  background-image: url("./img/color.jpg");
+  filter: none;
+  height: 250px;
+}
+#image3 {
+  background-image: url("./img/care1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(100%);
+  height: 250px;
+  transition: 0.8s;
+}
+
+#image3:hover {
+  background-image: url("./img/care2.jpg");
+  filter: none;
+  height: 250px;
+}
+#image4 {
+  background-image: url("./img/style1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  transition: 0.8s;
+  filter: grayscale(100%);
+}
+
+#image4:hover {
+  background-image: url("./img/style2.jpg");
+  filter: none;
+  height: 250px;
+}
+
+.service-images {
+  height: 250;
+  width: 400;
+  padding: 20px 20px;
+  border: 1px solid white;
+  text-shadow: 3px 2px #000000;
+  border-radius: 30%;
+  min-height: 400px;
+  min-width: 20%;
+  background-position: center;
+  padding: 20px 20px;
+  margin: 40px 10px;
+  text-align: center;
 }
