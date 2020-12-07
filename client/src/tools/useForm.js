@@ -1,11 +1,14 @@
 import { useState } from "react";
+import axios from "axios";
 
 const useForm = (callback) => {
   const [values, setValues] = useState({});
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     if (event) event.preventDefault();
-    window.alert(JSON.stringify(values));
+    // window.alert(JSON.stringify(values));
+    axios.post("/contactformhandler", values);
+
     // Callback will come here.
   };
 

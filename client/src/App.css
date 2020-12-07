@@ -334,3 +334,12 @@ form {
   margin: 40px 10px;
   text-align: center;
 }
+
+#captcha {
+  margin: 1em auto;
+  padding-left: 30%;
+}
+
+.attention {
+  border: 3px red solid;
+}

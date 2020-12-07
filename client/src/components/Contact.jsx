@@ -1,18 +1,60 @@
-import React from "react";
-import useWindowDimensions from "../tools/useWindowDimensions";
+import React, { useState } from "react";
+import axios from "axios";
+import Message from "./Message";
+
 import useForm from "../tools/useForm";
 import { InputMask } from "primereact/inputmask";
-import { makeStyles } from "@material-ui/core/styles";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import Typography from "@material-ui/core/Typography";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import GoogleMaps from "simple-react-google-maps";
+import ReCaptcha from "./ReCaptcha";
 
 export default function Contact() {
-  const { height, width } = useWindowDimensions();
-  const { values, handleChange, handleSubmit } = useForm();
+  // const { values, handleChange, handleSubmit } = useForm();
+  const [captcha, setcaptcha] = useState(false);
+  const [name, setname] = useState("");
+  const [email, setemail] = useState("");
+  const [tel, settel] = useState("");
+  const [message, setmessage] = useState("");
+  const [resMsg, setresMsg] = useState("");
+  const [isMsgVisible, setisMsgVisible] = useState(false);
+  const [isAllFields, setisAllFields] = useState(false);
+
+  const handleSubmit = async (event) => {
+    if (event) event.preventDefault();
+    if (!name || !email || !tel || !message || !captcha) {
+      setresMsg("All fields are required!");
+      setisAllFields(true);
+      setisMsgVisible(true);
+      deleteMessage();
+    } else {
+      axios
+        .post("/contactformhandler", { name, email, tel, message })
+        .then((response) => setresMsg(response.data.msg))
+        .then(setisMsgVisible(true));
+      clearForm();
+    }
+
+    // Callback will come here.
+  };
+
+  const captchaChanger = (val) => {
+    setcaptcha(val);
+  };
+  const deleteMessage = () => {
+    setTimeout(() => {
+      setisMsgVisible(false);
+    }, 3000);
+  };
+
+  const clearForm = () => {
+    setname("");
+    settel("");
+    setemail("");
+    setmessage("");
+  };
+
+  const formAttention = isAllFields ? "attention" : null;
+
   return (
     <div
       className="flex-container"
@@ -26,49 +68,70 @@ export default function Contact() {
       }}
     >
       <form onSubmit={handleSubmit}>
+        {!isMsgVisible ? null : (
+          <div>
+            <Message displayMessage={resMsg} />
+            {deleteMessage()}
+          </div>
+        )}
         <label for="Name Field"></label>
         <input
-          className="input"
-          onChange={handleChange}
+          className={`input ${formAttention}`}
+          onChange={(e) => setname(e.target.value)}
           id="Name Field"
           name="name"
           type="text"
-          value={values.name}
+          value={name}
           placeholder="Please type your name."
         />
         <label for="E-Mail Field"> </label>
         <input
-          className="input"
-          onChange={handleChange}
+          className={`input ${formAttention}`}
+          onChange={(e) => setemail(e.target.value)}
           id="E-Mail Field"
           name="email"
           type="email"
-          value={values.email}
+          value={email}
           placeholder="Please type your E-Mail."
         />
         <label for="Telephone field"></label>
         <InputMask
-          className="input"
+          className={`input ${formAttention}`}
           id="Telephone Field"
           name="tel"
           mask="(999) 999-9999"
-          value={values.tel}
+          value={tel}
           placeholder="Contact Number"
-          onChange={handleChange}
+          onChange={(e) => settel(e.target.value)}
         ></InputMask>
         <label for="Text Area Field"></label>
         <textarea
-          className="input-textarea"
-          onChange={handleChange}
+          className={`input-textarea ${formAttention}`}
+          onChange={(e) => setmessage(e.target.value)}
           id="Text Area Field"
           name="message"
           type="text"
-          value={values.message}
+          value={message}
           placeholder="Please write your message here."
         />
-        <button className="input-button" type="submit">
+        <div id="captcha">
+          <ReCaptcha handleChange={captchaChanger} />
+        </div>
+
+        {captcha ? (
+          <button className="input-button" type="submit">
+            Submit
+          </button>
+        ) : (
+          <button className="input-button" style={{ backgroundColor: "red" }}>
+            {" "}
+            Please verify you are human!{" "}
+          </button>
+        )}
+
+        {/* <button className="input-button" type="submit">
           Submit
-        </button>
+        </button> */}
       </form>
 
       <div className="FAQ">

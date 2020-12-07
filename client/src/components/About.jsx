@@ -11,7 +11,10 @@ export default function About() {
         margin: 0,
       }}
     >
-      <p>"This is about component!"</p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corrupti
+      aut sapiente, a, similique aspernatur voluptate voluptas repellat
+      cupiditate vero officiis iste reiciendis expedita animi voluptatem
+      eveniet. Natus, veniam totam?
     </div>
   );
 }
