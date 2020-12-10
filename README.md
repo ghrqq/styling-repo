@@ -1,7 +1,7 @@
 # styling-app
 
-# This is a custom made app for a hair stylist.
+Custom made app for an hair stylist. 
 
-### Not an important one.
+## Not responsive!
 
 link: https://hairstylist-dummy.netlify.app/
